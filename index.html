@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yellow Petal House · Authority Gardening Blog</title>
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf7f2;  /* warm off-white */
+      color: #1e2b2b;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ----- TYPOGRAPHY (unique blend) ----- */
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #1f3a3a;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin: 2.5rem 0 1rem;
+      border-left: 6px solid #d9b382;
+      padding-left: 1rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin: 2rem 0 0.8rem;
+      font-weight: 600;
+    }
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+      color: #2b3e3e;
+    }
+
+    a {
+      color: #3d6b4f;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8c9b0;
+      transition: 0.2s;
+    }
+    a:hover {
+      color: #1f4a2d;
+      border-bottom: 1px solid #1f4a2d;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #e7e0d3;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      display: inline-block;
+      color: #2f4b3b;
+      font-weight: 600;
+    }
+
+    /* ----- HEADER / NAV (unique) ----- */
+    .site-header {
+      padding: 1.8rem 0 1.2rem;
+      border-bottom: 2px solid #ded5c4;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1f3a3a;
+      letter-spacing: -0.02em;
+    }
+    .logo span {
+      color: #c29a6b;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      border: none;
+      color: #2d4545;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #b4824a;
+    }
+
+    .header-search {
+      background: #ede7dd;
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .header-search i {
+      color: #6a7f6a;
+    }
+    .header-search input {
+      border: none;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      padding: 0.5rem 0;
+      width: 160px;
+      outline: none;
+      font-size: 0.9rem;
+    }
+
+    /* ----- HERO (content-first) ----- */
+    .hero {
+      padding: 3.5rem 0 3rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      border-bottom: 1px solid #ddd2c0;
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+    .hero-text .subhead {
+      font-size: 1.2rem;
+      color: #3b5555;
+      max-width: 90%;
+      border-left: 4px solid #d9b382;
+      padding-left: 1.2rem;
+      font-weight: 400;
+    }
+    .hero-topics {
+      margin-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.6rem;
+    }
+    .hero-topics span {
+      font-weight: 500;
+      color: #1f3a3a;
+      background: #ede7dd;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+    }
+
+    .hero-image {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.08);
+      background: #d6cbbc;
+      height: 220px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600"><rect width="800" height="600" fill="%23d6cbbc"/><circle cx="200" cy="250" r="80" fill="%23e8d5b5"/><circle cx="400" cy="180" r="120" fill="%23dbb87c"/><circle cx="620" cy="300" r="90" fill="%23c9a86b"/><circle cx="300" cy="420" r="100" fill="%23b58f55"/><circle cx="550" cy="450" r="70" fill="%23a87d4a"/><circle cx="120" cy="420" r="60" fill="%23b58f55"/></svg>'); /* abstract floral */
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* ----- FEATURED ARTICLES GRID (unique card) ----- */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2.5rem 0 1rem;
+    }
+
+    .article-card {
+      background: #fcfaf7;
+      border-radius: 28px;
+      padding: 1.8rem 1.8rem 2rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.02);
+      transition: 0.2s;
+      border: 1px solid #ece3d7;
+    }
+    .article-card:hover {
+      border-color: #c9b499;
+      box-shadow: 0 12px 30px -12px rgba(90, 70, 40, 0.08);
+    }
+    .article-card .card-tag {
+      font-size: 0.7rem;
+      background: #d9d0be;
+      padding: 0.15rem 1rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+    .article-card h3 {
+      font-size: 1.4rem;
+      margin: 0.2rem 0 0.5rem;
+      font-weight: 600;
+    }
+    .article-card .excerpt {
+      font-size: 0.95rem;
+      color: #385252;
+      margin-bottom: 1.2rem;
+    }
+    .article-card .meta {
+      font-size: 0.8rem;
+      color: #6f7e6f;
+      border-top: 1px solid #e4d9cb;
+      padding-top: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .card-image {
+      width: 100%;
+      height: 120px;
+      background: #cfc1ab;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23cfc1ab"/><circle cx="80" cy="90" r="50" fill="%23e2cfb0"/><circle cx="200" cy="70" r="60" fill="%23bda57b"/><circle cx="150" cy="150" r="40" fill="%23a58353"/></svg>');
+      background-size: cover;
+    }
+
+    /* ----- beginner / expert sections (two column) ----- */
+    .guide-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.8rem;
+      margin: 2.2rem 0 3rem;
+    }
+
+    .guide-item {
+      background: #f5f0e9;
+      padding: 2rem 2.2rem;
+      border-radius: 32px;
+    }
+    .guide-item h3 {
+      font-size: 1.7rem;
+      margin-top: 0;
+    }
+    .guide-item ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+    .guide-item ul li {
+      padding: 0.4rem 0;
+      border-bottom: 1px dashed #d6cbbc;
+      display: flex;
+      gap: 0.8rem;
+      align-items: baseline;
+    }
+    .guide-item ul li i {
+      color: #a9855a;
+      width: 1.2rem;
+    }
+
+    /* categories & trending */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+    .category-item {
+      background: #ede7dd;
+      border-radius: 40px;
+      padding: 0.8rem 1.2rem;
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #1f3a3a;
+      border: 1px solid #ddd2c0;
+      transition: 0.15s;
+    }
+    .category-item i {
+      margin-right: 8px;
+      color: #7d9c7d;
+    }
+    .category-item:hover {
+      background: #dccfc0;
+      border-color: #b59b7e;
+    }
+
+    /* latest & in-depth */
+    .latest-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2.5rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+    .latest-list {
+      list-style: none;
+    }
+    .latest-list li {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #e2d7c6;
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .latest-list .list-meta {
+      font-size: 0.75rem;
+      color: #6b7f6b;
+      background: #ede7dd;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+    }
+    .latest-list h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .resource-hub {
+      background: #f0ebe0;
+      border-radius: 32px;
+      padding: 2rem 2rem;
+      margin: 2rem 0;
+    }
+
+    /* FAQ (schema-ready) */
+    .faq-item {
+      border-bottom: 1px solid #ddd2c0;
+      padding: 1.2rem 0;
+    }
+    .faq-item h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      margin: 0;
+      display: flex;
+      gap: 0.8rem;
+    }
+    .faq-item p {
+      margin: 0.6rem 0 0 2rem;
+      color: #3d5555;
+    }
+
+    /* newsletter */
+    .newsletter {
+      background: #1f3a3a;
+      color: #f2ede4;
+      border-radius: 60px 60px 30px 30px;
+      padding: 2.8rem 3rem;
+      margin: 3rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .newsletter h2 {
+      color: #f2ede4;
+      border-left-color: #c7a77b;
+      margin: 0;
+      font-size: 2rem;
+    }
+    .newsletter p {
+      color: #d2cfc0;
+      max-width: 400px;
+    }
+    .newsletter form {
+      display: flex;
+      gap: 0.6rem;
+      background: #2f4d4d;
+      padding: 0.3rem;
+      border-radius: 80px;
+    }
+    .newsletter input {
+      border: none;
+      padding: 0.8rem 1.6rem;
+      border-radius: 60px;
+      background: #f2ede4;
+      font-family: 'Inter', sans-serif;
+      width: 240px;
+    }
+    .newsletter button {
+      background: #c7a77b;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1e2b2b;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .newsletter button:hover {
+      background: #dbb687;
+    }
+
+    /* footer */
+    .footer {
+      border-top: 2px solid #ded5c4;
+      padding: 2.5rem 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    /* mobile */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .featured-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .guide-block, .latest-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .newsletter {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        border-radius: 30px;
+      }
+      .header-search input {
+        width: 100px;
+      }
+    }
+    @media (max-width: 600px) {
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .site-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+    }
+
+    /* infographic placeholder (only one) */
+    .infographic-box {
+      background: #e7dfd2;
+      border-radius: 28px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      border: 1px dashed #b59b7e;
+    }
+    .infographic-box i {
+      font-size: 2.8rem;
+      color: #9d7f5a;
+    }
+    .infographic-box span {
+      font-weight: 500;
+      color: #1f3a3a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">Yellow Petal <span>House</span></div>
+      <div class="nav-links">
+       <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+      </div>
+      <div class="header-search">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search gardens..." />
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Rooted in wisdom, <br />grown with care.</h1>
+        <div class="subhead">Deep gardening knowledge for the modern grower — from soil biology to seasonal rhythms.</div>
+        <div class="hero-topics">
+          <span>🌱 Soil Health</span>
+          <span>🌼 Perennial Design</span>
+          <span>🌿 Edible Gardens</span>
+          <span>🌻 Pollinator Paths</span>
+        </div>
+      </div>
+      <div class="hero-image" aria-label="Yellow petals and garden abstract"></div>
+    </section>
+
+    <!-- FEATURED ARTICLES (3 cards) -->
+    <h2>Featured deep dives</h2>
+    <div class="featured-grid">
+      <article class="article-card">
+        <div class="card-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%23d6cbbc%22/><circle cx=%2280%22 cy=%2290%22 r=%2240%22 fill=%22%23e2cfb0%22/><circle cx=%22200%22 cy=%2270%22 r=%2250%22 fill=%22%23bda57b%22/><circle cx=%22150%22 cy=%22150%22 r=%2230%22 fill=%22%23a58353%22/></svg>');"></div>
+        <span class="card-tag">soil · 12 min</span>
+        <h3>The living soil food web</h3>
+        <div class="excerpt">Mycorrhizal networks, nematode cycles, and how to build organic matter that feeds your plants for years.</div>
+        <div class="meta"><span>by Eliza R.</span><span>Apr 12, 2026</span></div>
+      </article>
+      <article class="article-card">
+        <div class="card-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%23d6cbbc%22/><circle cx=%22100%22 cy=%2280%22 r=%2250%22 fill=%22%23e8d5b5%22/><circle cx=%22220%22 cy=%22120%22 r=%2240%22 fill=%22%23dbb87c%22/><circle cx=%22160%22 cy=%22160%22 r=%2245%22 fill=%22%23c9a86b%22/></svg>');"></div>
+        <span class="card-tag">design · 9 min</span>
+        <h3>Layered perennial borders</h3>
+        <div class="excerpt">Create four-season interest with structural plants, self-seeding flowers, and textural grasses.</div>
+        <div class="meta"><span>by Marcus T.</span><span>Apr 8, 2026</span></div>
+      </article>
+      <article class="article-card">
+        <div class="card-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 200%22><rect width=%22300%22 height=%22200%22 fill=%22%23d6cbbc%22/><circle cx=%22150%22 cy=%22100%22 r=%2260%22 fill=%22%23e2cfb0%22/><circle cx=%2270%22 cy=%22140%22 r=%2240%22 fill=%22%23bda57b%22/><circle cx=%22230%22 cy=%22130%22 r=%2250%22 fill=%22%23a58353%22/></svg>');"></div>
+        <span class="card-tag">edible · 14 min</span>
+        <h3>High-yield kitchen gardens</h3>
+        <div class="excerpt">Square-foot planting, succession sowing, and companion planting for continuous harvest.</div>
+        <div class="meta"><span>by Priya K.</span><span>Apr 5, 2026</span></div>
+      </article>
+    </div>
+
+    <!-- BEGINNER + EXPERT GUIDES -->
+    <div class="guide-block">
+      <div class="guide-item">
+        <h3>🌱 Beginner’s compass</h3>
+        <ul>
+          <li><i class="fas fa-seedling"></i> Soil testing & amendments</li>
+          <li><i class="fas fa-sun"></i> Sun mapping your garden</li>
+          <li><i class="fas fa-tint"></i> Watering deep vs. frequent</li>
+          <li><i class="fas fa-leaf"></i> First-year perennial care</li>
+        </ul>
+        <p style="margin-top: 0.8rem; font-size:0.95rem;">Start with confidence. <a href="#">Read the starter series →</a></p>
+      </div>
+      <div class="guide-item">
+        <h3>🧑‍🌾 Expert resources</h3>
+        <ul>
+          <li><i class="fas fa-flask"></i> Biological inoculants</li>
+          <li><i class="fas fa-chart-line"></i> Phenology & bloom calendars</li>
+          <li><i class="fas fa-cut"></i> Advanced pruning techniques</li>
+          <li><i class="fas fa-seedling"></i> Seed saving & breeding</li>
+        </ul>
+        <p style="margin-top: 0.8rem; font-size:0.95rem;">Master the craft. <a href="#">Explore advanced guides →</a></p>
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <h2>Popular categories</h2>
+    <div class="category-grid">
+      <div class="category-item"><i class="fas fa-tree"></i> Trees & shrubs</div>
+      <div class="category-item"><i class="fas fa-flower"></i> Perennials</div>
+      <div class="category-item"><i class="fas fa-carrot"></i> Vegetables</div>
+      <div class="category-item"><i class="fas fa-bug"></i> Pest management</div>
+      <div class="category-item"><i class="fas fa-pagelines"></i> Native plants</div>
+      <div class="category-item"><i class="fas fa-hand-holding-heart"></i> Soil care</div>
+      <div class="category-item"><i class="fas fa-tools"></i> Garden tools</div>
+      <div class="category-item"><i class="fas fa-cloud-sun"></i> Seasonal tasks</div>
+    </div>
+
+    <!-- TRENDING TOPICS -->
+    <h2>Trending topics</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem 1.8rem; background: #f5f0e9; padding: 1.5rem 2rem; border-radius: 60px; margin-bottom: 2rem;">
+      <span><i class="fas fa-fire" style="color:#b4824a;"></i> No-dig gardening</span>
+      <span><i class="fas fa-fire" style="color:#b4824a;"></i> Pollinator corridors</span>
+      <span><i class="fas fa-fire" style="color:#b4824a;"></i> Compost tea recipes</span>
+      <span><i class="fas fa-fire" style="color:#b4824a;"></i> Climate-resilient perennials</span>
+      <span><i class="fas fa-fire" style="color:#b4824a;"></i> Urban orchard</span>
+    </div>
+
+    <!-- LATEST + IN-DEPTH -->
+    <div class="latest-grid">
+      <div>
+        <h2>Latest articles</h2>
+        <ul class="latest-list">
+          <li><span class="list-meta">Apr 14</span> <h4>Building a worm tower for apartment balconies</h4></li>
+          <li><span class="list-meta">Apr 11</span> <h4>Five native groundcovers that outcompete weeds</h4></li>
+          <li><span class="list-meta">Apr 9</span> <h4>Using biochar: science and application</h4></li>
+          <li><span class="list-meta">Apr 6</span> <h4>Grafting heirloom tomatoes for disease resistance</h4></li>
+        </ul>
+      </div>
+      <div>
+        <h2>In-depth tutorials</h2>
+        <ul class="latest-list">
+          <li><span class="list-meta">✧</span> <h4>Build a raised bed from reclaimed wood</h4></li>
+          <li><span class="list-meta">✧</span> <h4>Installing drip irrigation step-by-step</h4></li>
+          <li><span class="list-meta">✧</span> <h4>Winter sowing native perennials</h4></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RESOURCE HUB (infographic included) -->
+    <div class="resource-hub">
+      <h2 style="margin-top:0;">Resource hub</h2>
+      <div class="infographic-box">
+        <i class="fas fa-chart-pie"></i>
+        <span><strong>Infographic:</strong> The 6 soil types and their ideal plants — download PDF</span>
+        <span style="margin-left: auto; background: #d9d0be; padding: 0.2rem 1.4rem; border-radius: 40px; font-size:0.8rem;">free</span>
+      </div>
+      <p style="max-width: 70%;">Printable checklists, seasonal calendars, and plant selection guides. Updated monthly.</p>
+    </div>
+
+    <!-- FAQ -->
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item"><h4><i class="fas fa-plus-circle" style="color:#a9855a;"></i> How often should I amend my soil?</h4><p>Test annually; add compost and organic matter in spring and fall. Adjust based on crop needs.</p></div>
+    <div class="faq-item"><h4><i class="fas fa-plus-circle" style="color:#a9855a;"></i> What are the best perennials for partial shade?</h4><p>Hellebores, ferns, astilbe, and hakone grass thrive with dappled light.</p></div>
+    <div class="faq-item"><h4><i class="fas fa-plus-circle" style="color:#a9855a;"></i> Can I grow vegetables in small containers?</h4><p>Absolutely. Dwarf tomatoes, peppers, and salad greens perform well in 5-gallon pots.</p></div>
+
+    <!-- NEWSLETTER -->
+    <div class="newsletter">
+      <div><h2>Weekly garden notes</h2><p>Insights, seasonal tips, and member-only articles.</p></div>
+      <form><input type="email" placeholder="your@email.com" /><button>Subscribe</button></form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>© 2026 Yellow Petal House ·  Est. 2016</div>
+      <div><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></div>
+      <div><i class="fab fa-instagram"></i> <i class="fab fa-pinterest"></i> <i class="fab fa-youtube"></i></div>
+    </footer>
+
+  </div> <!-- container -->
+</body>
+</html>

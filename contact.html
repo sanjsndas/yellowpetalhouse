@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · Yellow Petal House</title>
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ── reset & base (same as main) ── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #faf7f2;
+      color: #1e2b2b;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #1f3a3a;
+    }
+    h1 { font-size: 3rem; font-weight: 700; }
+    h2 { font-size: 2.2rem; margin: 2.5rem 0 1rem; border-left: 6px solid #d9b382; padding-left: 1rem; }
+    h3 { font-size: 1.6rem; margin: 2rem 0 0.8rem; }
+    p { margin-bottom: 1.25rem; color: #2b3e3e; }
+    a {
+      color: #3d6b4f;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8c9b0;
+      transition: 0.2s;
+    }
+    a:hover { color: #1f4a2d; border-bottom: 1px solid #1f4a2d; }
+    .tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #e7e0d3;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      display: inline-block;
+      color: #2f4b3b;
+      font-weight: 600;
+    }
+
+    /* ── header ── */
+    .site-header {
+      padding: 1.8rem 0 1.2rem;
+      border-bottom: 2px solid #ded5c4;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1f3a3a;
+      letter-spacing: -0.02em;
+    }
+    .logo span { color: #c29a6b; font-style: italic; font-weight: 400; }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      list-style: none;
+    }
+    .nav-links a { border: none; color: #2d4545; transition: 0.2s; }
+    .nav-links a:hover { color: #b4824a; }
+    .header-search {
+      background: #ede7dd;
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .header-search i { color: #6a7f6a; }
+    .header-search input {
+      border: none;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      padding: 0.5rem 0;
+      width: 160px;
+      outline: none;
+      font-size: 0.9rem;
+    }
+
+    /* ── contact hero ── */
+    .contact-hero {
+      padding: 2.5rem 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      border-bottom: 1px solid #ddd2c0;
+      margin-bottom: 2rem;
+    }
+    .contact-hero h1 {
+      font-size: 3.2rem;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+    .contact-hero .subhead {
+      font-size: 1.2rem;
+      color: #3b5555;
+      border-left: 4px solid #d9b382;
+      padding-left: 1.2rem;
+      font-weight: 400;
+    }
+    .contact-illustration {
+      background: #d6cbbc;
+      border-radius: 28px;
+      height: 200px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><rect width="800" height="400" fill="%23d6cbbc"/><circle cx="200" cy="160" r="80" fill="%23e8d5b5"/><circle cx="450" cy="120" r="100" fill="%23dbb87c"/><circle cx="650" cy="200" r="70" fill="%23c9a86b"/><circle cx="300" cy="280" r="60" fill="%23b58f55"/><circle cx="550" cy="300" r="50" fill="%23a87d4a"/></svg>');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 8px 24px -8px rgba(0,0,0,0.08);
+    }
+
+    /* ── contact grid ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      margin: 2rem 0 3rem;
+    }
+
+    /* form */
+    .contact-form {
+      background: #fcfaf7;
+      padding: 2rem 2.5rem;
+      border-radius: 32px;
+      border: 1px solid #ece3d7;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+    }
+    .contact-form label {
+      font-weight: 500;
+      display: block;
+      margin: 1.2rem 0 0.3rem;
+      color: #1f3a3a;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid #ddd2c0;
+      border-radius: 40px;
+      background: #faf7f2;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: 0.2s;
+      outline: none;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #b59b7e;
+      background: #fffcf8;
+    }
+    .contact-form textarea {
+      border-radius: 24px;
+      min-height: 140px;
+      resize: vertical;
+    }
+    .contact-form .form-row {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .contact-form .form-row > div {
+      flex: 1 1 200px;
+    }
+    .btn-submit {
+      background: #1f3a3a;
+      border: none;
+      color: #f2ede4;
+      font-weight: 600;
+      padding: 0.9rem 2.8rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      margin-top: 1.2rem;
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-submit:hover {
+      background: #3d6b4f;
+      color: #fff;
+    }
+
+    /* contact info */
+    .contact-info {
+      background: #f5f0e9;
+      border-radius: 32px;
+      padding: 2rem 2rem;
+    }
+    .contact-info h3 {
+      margin-top: 0;
+      font-size: 1.7rem;
+    }
+    .contact-info ul {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    .contact-info ul li {
+      padding: 0.7rem 0;
+      border-bottom: 1px dashed #d6cbbc;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .contact-info ul li i {
+      color: #a9855a;
+      width: 1.6rem;
+      font-size: 1.2rem;
+    }
+    .contact-info .social-links {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.8rem;
+      font-size: 1.6rem;
+    }
+    .contact-info .social-links a {
+      border: none;
+      color: #3d5a4a;
+      transition: 0.2s;
+    }
+    .contact-info .social-links a:hover {
+      color: #b4824a;
+      transform: scale(1.05);
+    }
+
+    /* ── extra: faq / newsletter (same style) ── */
+    .faq-item {
+      border-bottom: 1px solid #ddd2c0;
+      padding: 1.2rem 0;
+    }
+    .faq-item h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      margin: 0;
+      display: flex;
+      gap: 0.8rem;
+    }
+    .faq-item p { margin: 0.6rem 0 0 2rem; color: #3d5555; }
+
+    .newsletter {
+      background: #1f3a3a;
+      color: #f2ede4;
+      border-radius: 60px 60px 30px 30px;
+      padding: 2.8rem 3rem;
+      margin: 3rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .newsletter h2 {
+      color: #f2ede4;
+      border-left-color: #c7a77b;
+      margin: 0;
+      font-size: 2rem;
+    }
+    .newsletter p { color: #d2cfc0; max-width: 400px; }
+    .newsletter form {
+      display: flex;
+      gap: 0.6rem;
+      background: #2f4d4d;
+      padding: 0.3rem;
+      border-radius: 80px;
+    }
+    .newsletter input {
+      border: none;
+      padding: 0.8rem 1.6rem;
+      border-radius: 60px;
+      background: #f2ede4;
+      font-family: 'Inter', sans-serif;
+      width: 240px;
+    }
+    .newsletter button {
+      background: #c7a77b;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1e2b2b;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .newsletter button:hover { background: #dbb687; }
+
+    .footer {
+      border-top: 2px solid #ded5c4;
+      padding: 2.5rem 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    /* ── responsive ── */
+    @media (max-width: 900px) {
+      .contact-hero { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .newsletter { flex-direction: column; align-items: flex-start; gap: 1.5rem; border-radius: 30px; }
+      .header-search input { width: 100px; }
+    }
+    @media (max-width: 600px) {
+      .site-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+      .nav-links { flex-wrap: wrap; gap: 1.2rem; }
+      .contact-form { padding: 1.5rem; }
+      .contact-form .form-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER (same as main) -->
+  <header class="site-header">
+    <div class="logo">Yellow Petal <span>House</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" style="color:#b4824a; border-bottom:2px solid #b4824a;">Contact</a></li>
+      <li><a href="terms.html">Terms Of Privacy</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="cookies.html">Cookies Policy</a></li>
+    </ul>
+    <div class="header-search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search gardens..." />
+    </div>
+  </header>
+
+  <!-- CONTACT HERO -->
+  <section class="contact-hero">
+    <div>
+      <h1>Let’s grow <br />together.</h1>
+      <div class="subhead">Reach out for collaborations, gardening questions, or just to say hello.</div>
+    </div>
+    <div class="contact-illustration" aria-label="Garden abstract with yellow petals"></div>
+  </section>
+
+  <!-- CONTACT GRID: form + info -->
+  <div class="contact-grid">
+    <!-- form -->
+    <div class="contact-form">
+      <h2 style="margin-top:0; border-left: none; padding-left:0; font-size:1.8rem;">Send us a note</h2>
+      <p style="margin-bottom:1.8rem;">We’ll reply within 24 hours — we love hearing from fellow gardeners.</p>
+      <form action="#" method="POST">
+        <div class="form-row">
+          <div>
+            <label for="name">Full name</label>
+            <input type="text" id="name" placeholder="e.g. Robin Green" />
+          </div>
+          <div>
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="robin@example.com" />
+          </div>
+        </div>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" placeholder="Gardening question / collaboration" />
+
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Tell us about your garden, your question, or your idea…"></textarea>
+
+        <button type="submit" class="btn-submit"><i class="fas fa-paper-plane" style="margin-right:10px;"></i>Send message</button>
+      </form>
+    </div>
+
+    <!-- contact info -->
+    <div class="contact-info">
+      <h3>Reach out</h3>
+      <ul>
+        <li><i class="fas fa-envelope"></i> hello@yellowpetal.house</li>
+        <li><i class="fas fa-phone-alt"></i> +1 (800) 555-0199</li>
+        <li><i class="fas fa-map-pin"></i> 42 Garden Lane, VT 05401</li>
+        <li><i class="fas fa-clock"></i> Mon–Fri: 9am – 6pm EST</li>
+      </ul>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p style="margin-top:1.8rem; font-size:0.9rem; border-top:1px solid #d6cbbc; padding-top:1.2rem;">
+        <i class="fas fa-seedling" style="color:#a9855a; margin-right:8px;"></i>
+        We’re a small team of horticulturists & writers — we’d love to connect.
+      </p>
+    </div>
+  </div>
+
+  <!-- FREQUENTLY ASKED (quick reference) -->
+  <h2>Quick answers</h2>
+  <div class="faq-item"><h4><i class="fas fa-plus-circle" style="color:#a9855a;"></i> Do you accept guest posts?</h4><p>Yes, we welcome pitches from experienced gardeners. Please include your background and topic idea.</p></div>
+  <div class="faq-item"><h4><i class="fas fa-plus-circle" style="color:#a9855a;"></i> Can I request a specific topic?</h4><p>Absolutely. Our editorial team considers reader suggestions for future deep dives.</p></div>
+  <div class="faq-item"><h4><i class="fas fa-plus-circle" style="color:#a9855a;"></i> How fast do you reply?</h4><p>We aim for 24 hours, but often faster during weekdays.</p></div>
+
+  <!-- NEWSLETTER (same) -->
+  <div class="newsletter">
+    <div><h2>Weekly garden notes</h2><p>Insights, seasonal tips, and member-only articles.</p></div>
+    <form><input type="email" placeholder="your@email.com" /><button>Subscribe</button></form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>© 2026 Yellow Petal House ·  Est. 2016</div>
+    <div><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="contact.html">Contact</a></div>
+    <div><i class="fab fa-instagram"></i> <i class="fab fa-pinterest"></i> <i class="fab fa-youtube"></i></div>
+  </footer>
+
+</div> <!-- container -->
+</body>
+</html>

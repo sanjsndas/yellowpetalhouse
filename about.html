@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Yellow Petal House</title>
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf7f2;  /* warm off-white */
+      color: #1e2b2b;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ----- TYPOGRAPHY (unique blend) ----- */
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #1f3a3a;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin: 2.5rem 0 1rem;
+      border-left: 6px solid #d9b382;
+      padding-left: 1rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin: 2rem 0 0.8rem;
+      font-weight: 600;
+    }
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+      color: #2b3e3e;
+    }
+
+    a {
+      color: #3d6b4f;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8c9b0;
+      transition: 0.2s;
+    }
+    a:hover {
+      color: #1f4a2d;
+      border-bottom: 1px solid #1f4a2d;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #e7e0d3;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      display: inline-block;
+      color: #2f4b3b;
+      font-weight: 600;
+    }
+
+    /* ----- HEADER / NAV (unique) ----- */
+    .site-header {
+      padding: 1.8rem 0 1.2rem;
+      border-bottom: 2px solid #ded5c4;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1f3a3a;
+      letter-spacing: -0.02em;
+    }
+    .logo span {
+      color: #c29a6b;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      border: none;
+      color: #2d4545;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #b4824a;
+    }
+
+    .header-search {
+      background: #ede7dd;
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .header-search i {
+      color: #6a7f6a;
+    }
+    .header-search input {
+      border: none;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      padding: 0.5rem 0;
+      width: 160px;
+      outline: none;
+      font-size: 0.9rem;
+    }
+
+    /* ----- ABOUT PAGE SPECIFIC ----- */
+    .about-hero {
+      padding: 3rem 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      border-bottom: 1px solid #ddd2c0;
+      margin-bottom: 2.5rem;
+    }
+
+    .about-image {
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.08);
+      background: #d6cbbc;
+      height: 260px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600"><rect width="800" height="600" fill="%23d6cbbc"/><circle cx="200" cy="250" r="80" fill="%23e8d5b5"/><circle cx="400" cy="180" r="120" fill="%23dbb87c"/><circle cx="620" cy="300" r="90" fill="%23c9a86b"/><circle cx="300" cy="420" r="100" fill="%23b58f55"/><circle cx="550" cy="450" r="70" fill="%23a87d4a"/><circle cx="120" cy="420" r="60" fill="%23b58f55"/></svg>');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2.5rem 0 3rem;
+    }
+
+    .mission-card {
+      background: #fcfaf7;
+      border-radius: 28px;
+      padding: 2rem 1.8rem;
+      border: 1px solid #ece3d7;
+      text-align: center;
+    }
+    .mission-card i {
+      font-size: 2.4rem;
+      color: #a9855a;
+      margin-bottom: 1rem;
+    }
+    .mission-card h3 {
+      font-size: 1.4rem;
+      margin: 0.5rem 0;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.8rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .team-member {
+      background: #f5f0e9;
+      border-radius: 40px;
+      padding: 1.8rem 1.2rem;
+      text-align: center;
+    }
+    .team-member .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #d6cbbc;
+      margin: 0 auto 1rem;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23d6cbbc"/><circle cx="50" cy="35" r="18" fill="%23bda57b"/><circle cx="50" cy="75" r="22" fill="%23bda57b"/></svg>');
+      background-size: cover;
+    }
+    .team-member h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      margin: 0.2rem 0;
+    }
+    .team-member .role {
+      font-size: 0.85rem;
+      color: #5d6f5d;
+    }
+
+    .timeline {
+      background: #f0ebe0;
+      border-radius: 32px;
+      padding: 2rem 2.5rem;
+      margin: 2rem 0;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 1.5rem;
+      border-bottom: 1px dashed #d6cbbc;
+      padding: 1rem 0;
+    }
+    .timeline-item:last-child {
+      border: none;
+    }
+    .timeline-year {
+      font-weight: 700;
+      color: #a9855a;
+      min-width: 80px;
+    }
+
+    @media (max-width: 900px) {
+      .about-hero {
+        grid-template-columns: 1fr;
+      }
+      .mission-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .mission-grid, .team-grid {
+        grid-template-columns: 1fr;
+      }
+      .site-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+      .header-search input {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">Yellow Petal <span>House</span></div>
+      <div class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="terms.html">Terms Of Privacy</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="cookies.html">Cookies Policy</a></li>
+      </div>
+      <div class="header-search">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search gardens..." />
+      </div>
+    </header>
+
+    <!-- ABOUT HERO -->
+    <section class="about-hero">
+      <div>
+        <h1>We believe in <br />the wisdom of soil.</h1>
+        <p style="font-size: 1.2rem; color: #3b5555; border-left: 4px solid #d9b382; padding-left: 1.2rem; margin-top: 0.5rem;">
+          Yellow Petal House is a living library of gardening knowledge — crafted by growers, for growers.
+        </p>
+        <p style="margin-top: 1.5rem;">
+          Founded in 2016, we've grown from a small community blog into a trusted resource for both beginners and seasoned horticulturists. Our roots are in organic practice, ecological design, and the simple joy of watching things grow.
+        </p>
+      </div>
+      <div class="about-image" aria-label="Garden abstract with yellow petals"></div>
+    </section>
+
+    <!-- MISSION CARDS -->
+    <h2>Our guiding principles</h2>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <i class="fas fa-seedling"></i>
+        <h3>Ecological stewardship</h3>
+        <p>We champion practices that regenerate soil, support pollinators, and honor natural cycles.</p>
+      </div>
+      <div class="mission-card">
+        <i class="fas fa-book-open"></i>
+        <h3>Evidence-based growing</h3>
+        <p>Every guide is rooted in horticultural science, field trials, and centuries of traditional knowledge.</p>
+      </div>
+      <div class="mission-card">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h3>Gardening for all</h3>
+        <p>From balcony pots to acreage, we meet you where you are — with clarity and encouragement.</p>
+      </div>
+    </div>
+
+    <!-- TEAM -->
+    <h2>Meet the growers</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="avatar" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23d6cbbc%22/><circle cx=%2250%22 cy=%2235%22 r=%2218%22 fill=%22%23c9a86b%22/><circle cx=%2250%22 cy=%2275%22 r=%2222%22 fill=%22%23b58f55%22/></svg>');"></div>
+        <h4>Eliza R.</h4>
+        <div class="role">Soil ecologist · 12 yrs</div>
+      </div>
+      <div class="team-member">
+        <div class="avatar" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23d6cbbc%22/><circle cx=%2250%22 cy=%2235%22 r=%2218%22 fill=%22%23dbb87c%22/><circle cx=%2250%22 cy=%2275%22 r=%2222%22 fill=%22%23a58353%22/></svg>');"></div>
+        <h4>Marcus T.</h4>
+        <div class="role">Perennial designer · 9 yrs</div>
+      </div>
+      <div class="team-member">
+        <div class="avatar" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23d6cbbc%22/><circle cx=%2250%22 cy=%2235%22 r=%2218%22 fill=%22%23e2cfb0%22/><circle cx=%2250%22 cy=%2275%22 r=%2222%22 fill=%22%23bda57b%22/></svg>');"></div>
+        <h4>Priya K.</h4>
+        <div class="role">Edible garden specialist · 8 yrs</div>
+      </div>
+      <div class="team-member">
+        <div class="avatar" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23d6cbbc%22/><circle cx=%2250%22 cy=%2235%22 r=%2218%22 fill=%22%23b58f55%22/><circle cx=%2250%22 cy=%2275%22 r=%2222%22 fill=%22%23a87d4a%22/></svg>');"></div>
+        <h4>Jordan L.</h4>
+        <div class="role">Native plant advocate · 10 yrs</div>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <h2>Our journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-year">2016</span>
+        <span>Founded as a small garden blog by Eliza and Marcus — shared from a backyard in Vermont.</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2019</span>
+        <span>Launched the first community seed exchange and in-person workshops.</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2022</span>
+        <span>Expanded into a full digital resource hub with video tutorials and printable guides.</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2026</span>
+        <span>Today: serving over 200k readers monthly, with a focus on climate-adaptive gardening.</span>
+      </div>
+    </div>
+
+    <!-- STATS / FUN FACTS -->
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem 4rem; background: #f5f0e9; padding: 2rem 2.5rem; border-radius: 60px; margin: 2rem 0 3rem; justify-content: center;">
+      <div><strong style="font-size: 2rem; color: #1f3a3a;">200+</strong> <span style="display:block;">in-depth articles</span></div>
+      <div><strong style="font-size: 2rem; color: #1f3a3a;">35</strong> <span style="display:block;">expert contributors</span></div>
+      <div><strong style="font-size: 2rem; color: #1f3a3a;">12k</strong> <span style="display:block;">seed packets shared</span></div>
+      <div><strong style="font-size: 2rem; color: #1f3a3a;">4.9</strong> <span style="display:block;">reader satisfaction ⭐</span></div>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="newsletter" style="background: #1f3a3a; color: #f2ede4; border-radius: 60px 60px 30px 30px; padding: 2.8rem 3rem; margin: 3rem 0 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+      <div><h2 style="color: #f2ede4; border-left-color: #c7a77b; margin: 0; font-size: 2rem;">Weekly garden notes</h2><p style="color: #d2cfc0; max-width: 400px;">Insights, seasonal tips, and member-only articles.</p></div>
+      <form style="display: flex; gap: 0.6rem; background: #2f4d4d; padding: 0.3rem; border-radius: 80px;">
+        <input type="email" placeholder="your@email.com" style="border: none; padding: 0.8rem 1.6rem; border-radius: 60px; background: #f2ede4; font-family: 'Inter', sans-serif; width: 240px;" />
+        <button style="background: #c7a77b; border: none; padding: 0.8rem 2rem; border-radius: 60px; font-weight: 600; color: #1e2b2b; cursor: pointer; transition: 0.15s;">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" style="border-top: 2px solid #ded5c4; padding: 2.5rem 0 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; font-size: 0.9rem;">
+      <div>© 2026 Yellow Petal House · Est. 2016</div>
+      <div><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></div>
+      <div><i class="fab fa-instagram"></i> <i class="fab fa-pinterest"></i> <i class="fab fa-youtube"></i></div>
+    </footer>
+
+  </div> <!-- container -->
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms · Yellow Petal House</title>
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf7f2;
+      color: #1e2b2b;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #1f3a3a;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin: 2.5rem 0 1rem;
+      border-left: 6px solid #d9b382;
+      padding-left: 1rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin: 2rem 0 0.8rem;
+      font-weight: 600;
+    }
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+      color: #2b3e3e;
+    }
+
+    a {
+      color: #3d6b4f;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8c9b0;
+      transition: 0.2s;
+    }
+    a:hover {
+      color: #1f4a2d;
+      border-bottom: 1px solid #1f4a2d;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #e7e0d3;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      display: inline-block;
+      color: #2f4b3b;
+      font-weight: 600;
+    }
+
+    /* HEADER */
+    .site-header {
+      padding: 1.8rem 0 1.2rem;
+      border-bottom: 2px solid #ded5c4;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1f3a3a;
+      letter-spacing: -0.02em;
+    }
+    .logo span {
+      color: #c29a6b;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      border: none;
+      color: #2d4545;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #b4824a;
+    }
+
+    .header-search {
+      background: #ede7dd;
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .header-search i {
+      color: #6a7f6a;
+    }
+    .header-search input {
+      border: none;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      padding: 0.5rem 0;
+      width: 160px;
+      outline: none;
+      font-size: 0.9rem;
+    }
+
+    /* TERMS PAGE SPECIFIC */
+    .terms-hero {
+      padding: 2.5rem 0 1.5rem;
+      border-bottom: 1px solid #ddd2c0;
+      margin-bottom: 2.5rem;
+    }
+
+    .terms-hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .terms-hero .sub {
+      font-size: 1.2rem;
+      color: #3b5555;
+      border-left: 4px solid #d9b382;
+      padding-left: 1.2rem;
+      margin-top: 0.3rem;
+    }
+
+    .terms-content {
+      background: #fcfaf7;
+      border-radius: 32px;
+      padding: 2.5rem 3rem;
+      border: 1px solid #ece3d7;
+      margin-bottom: 3rem;
+    }
+
+    .terms-content h2 {
+      margin-top: 2.2rem;
+      border-left-color: #c7a77b;
+    }
+    .terms-content h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .terms-content ul, .terms-content ol {
+      margin: 1rem 0 1.5rem 1.8rem;
+      color: #2b3e3e;
+    }
+    .terms-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: #f5f0e9;
+      padding: 1.8rem 2.2rem;
+      border-radius: 40px;
+      margin: 2rem 0;
+      border-left: 8px solid #d9b382;
+    }
+
+    .terms-footer-note {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ded5c4;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .terms-content {
+        padding: 1.8rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .site-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+      .header-search input {
+        width: 100px;
+      }
+      .terms-hero h1 {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">Yellow Petal <span>House</span></div>
+      <div class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="terms.html">Terms Of Privacy</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="cookies.html">Cookies Policy</a></li>
+      </div>
+      <div class="header-search">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search gardens..." />
+      </div>
+    </header>
+
+    <!-- TERMS HERO -->
+    <section class="terms-hero">
+      <h1>Terms of Service</h1>
+      <div class="sub">Last updated: June 2026 · Growing together with clarity</div>
+      <p style="margin-top: 1.2rem; max-width: 720px;">
+        Welcome to Yellow Petal House. By using our website, you agree to the following terms. 
+        We keep things transparent — just like a well-tended garden.
+      </p>
+    </section>
+
+    <!-- TERMS CONTENT -->
+    <div class="terms-content">
+
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using Yellow Petal House (the “Site”), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, please do not use our Site.</p>
+
+      <h2>2. Use of Content</h2>
+      <p>All content provided on this Site — including articles, guides, images, and graphics — is for informational and educational purposes only. You may:</p>
+      <ul>
+        <li>Read, print, and share individual articles for personal, non‑commercial use.</li>
+        <li>Link to our content with proper attribution.</li>
+        <li>Download free resources as offered (e.g., printable guides).</li>
+      </ul>
+      <p>You may not republish, sell, or distribute our content without prior written permission. We believe in open knowledge, but we also respect the work of our contributors.</p>
+
+      <div class="highlight-box">
+        <i class="fas fa-seedling" style="color: #a9855a; font-size: 1.8rem; margin-right: 0.8rem;"></i>
+        <strong>Gardener’s promise:</strong> We strive to provide accurate, science‑backed information, but gardening is influenced by countless variables. Always consult local experts and test in your own conditions.
+      </div>
+
+      <h2>3. User Accounts & Comments</h2>
+      <p>Some areas of the Site may allow you to create an account or post comments. By doing so, you agree to:</p>
+      <ul>
+        <li>Provide accurate and current information.</li>
+        <li>Be respectful and constructive in all interactions.</li>
+        <li>Not post spam, harmful links, or misleading content.</li>
+      </ul>
+      <p>We reserve the right to moderate or remove any content that violates these standards.</p>
+
+      <h2>4. Intellectual Property</h2>
+      <p>All trademarks, logos, and service marks displayed on the Site are the property of Yellow Petal House or their respective owners. You may not use these without prior written consent.</p>
+
+      <h2>5. Third-Party Links</h2>
+      <p>Our Site may contain links to external websites or services. We are not responsible for the content, privacy policies, or practices of any third‑party sites. We encourage you to review their terms before engaging.</p>
+
+      <h2>6. Disclaimer of Warranties</h2>
+      <p>The Site and its content are provided on an “as is” and “as available” basis. We make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or availability of the information. Your use of the Site is at your own risk.</p>
+
+      <h2>7. Limitation of Liability</h2>
+      <p>In no event shall Yellow Petal House, its contributors, or affiliates be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with your use of the Site.</p>
+
+      <h2>8. Changes to These Terms</h2>
+      <p>We may revise these Terms of Service from time to time. The updated version will be indicated by an updated “Last updated” date. We encourage you to review this page periodically.</p>
+
+      <h2>9. Governing Law</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the state of Vermont, without regard to its conflict of law provisions.</p>
+
+      <h2>10. Contact Us</h2>
+      <p>If you have any questions about these Terms, please reach out via our <a href="contact.html">Contact page</a> or email us at <a href="mailto:hello@yellowpetal.house">hello@yellowpetal.house</a>.</p>
+
+      <div class="terms-footer-note">
+        <p><i class="fas fa-leaf" style="color: #6a7f6a;"></i>  This document is part of our commitment to transparency and trust. Updated regularly to reflect our evolving community and practices.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Effective date: June 28, 2026</p>
+      </div>
+    </div>
+
+    <!-- NEWSLETTER (consistent with brand) -->
+    <div class="newsletter" style="background: #1f3a3a; color: #f2ede4; border-radius: 60px 60px 30px 30px; padding: 2.8rem 3rem; margin: 3rem 0 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+      <div><h2 style="color: #f2ede4; border-left-color: #c7a77b; margin: 0; font-size: 2rem;">Weekly garden notes</h2><p style="color: #d2cfc0; max-width: 400px;">Insights, seasonal tips, and member-only articles.</p></div>
+      <form style="display: flex; gap: 0.6rem; background: #2f4d4d; padding: 0.3rem; border-radius: 80px;">
+        <input type="email" placeholder="your@email.com" style="border: none; padding: 0.8rem 1.6rem; border-radius: 60px; background: #f2ede4; font-family: 'Inter', sans-serif; width: 240px;" />
+        <button style="background: #c7a77b; border: none; padding: 0.8rem 2rem; border-radius: 60px; font-weight: 600; color: #1e2b2b; cursor: pointer; transition: 0.15s;">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" style="border-top: 2px solid #ded5c4; padding: 2.5rem 0 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; font-size: 0.9rem;">
+      <div>© 2026 Yellow Petal House · Est. 2016</div>
+      <div><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></div>
+      <div><i class="fab fa-instagram"></i> <i class="fab fa-pinterest"></i> <i class="fab fa-youtube"></i></div>
+    </footer>
+
+  </div> <!-- container -->
+</body>
+</html>
